@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Jackpot Slots</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- fixed full-screen layer, drawn on and cleared by JS -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Big pop-up win announcement, shown/hidden via JS -->
+    <div id="win-banner"></div>
+
+    <div class="app-container">
+        
+        <!--PAYTABLE -->
+        <div class="paytable-panel">
+            <h2>PAYTABLE (× BET)</h2>
+            <div class="paytable-list">
+                <div class="pay-row lucky-row"><span>7️⃣7️⃣7️⃣ LUCKY 7</span> <span>× 200</span></div>
+                <div class="pay-row"><span>🦚🦚🦚</span> <span>× 100</span></div>
+                <div class="pay-row"><span>🐯🐯🐯</span> <span>× 50</span></div>
+                <div class="pay-row"><span>🐘🐘🐘</span> <span>× 20</span></div>
+                <div class="pay-row"><span>🐼🐼🐼</span> <span>× 10</span></div>
+                <div class="pay-row"><span>🐒🐒🐒</span> <span>× 5</span></div>
+                <div class="pay-row"><span>🐰🐰🐰</span> <span>× 3</span></div>
+                <div class="pay-row"><span>🐢🐢🐢</span> <span>× 2</span></div>
+                <div class="pay-row" style="margin-top: 20px; font-size: 12px; color: #aaa;">
+                    Any Pair matches win partial credits!
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN GAME -->
+        <div class="game-panel">
+            <div class="header">
+                <h1>🦁 Wild Jackpot Slots 🐯</h1>
+                <p>Spin the reels and match the animals to win big!</p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <span class="stat-label">CREDITS</span>
+                    <span class="stat-value text-gold" id="credits-display">100</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">BET</span>
+                    <span class="stat-value text-gold" id="bet-display">10</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">LAST WIN</span>
+                    <span class="stat-value text-teal" id="last-win-display">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">BEST WIN</span>
+                    <span class="stat-value text-gold" id="best-win-display">0</span>
+                </div>
+            </div>
+
+            <!-- Reels Area -->
+            <div class="reels-container">
+                <div class="reels">
+                    <div class="reel" id="reel-1">❓</div>
+                    <div class="reel" id="reel-2">❓</div>
+                    <div class="reel" id="reel-3">❓</div>
+                </div>
+                <p id="message-display">Welcome! Place your bet and spin.</p>
+            </div>
+
+            <!-- Controls Area -->
+            <div class="controls">
+                <div class="bet-controls">
+                    <button class="icon-btn" id="btn-minus">−</button>
+                    <div class="bet-indicator">
+                        <span style="font-size: 10px;">BET</span>
+                        <span id="control-bet-display">10</span>
+                    </div>
+                    <button class="icon-btn" id="btn-plus">+</button>
+                </div>
+                
+                <button class="spin-btn" id="btn-spin">SPIN</button>
+                <button class="max-bet-btn" id="btn-max">MAX BET</button>
+                <button class="max-bet-btn" id="btn-auto" style="border-color: #3498db; color: #3498db;">AUTO SPIN</button>
+            </div>
+        </div>
+
+        <!-- SPIN HISTORY -->
+        <div class="history-panel">
+            <div class="history-header">
+                <h2>SPIN HISTORY</h2>
+                <button id="btn-clear-history" class="clear-btn" title="Clear Spin History">🗑️</button>
+            </div>
+            <div id="history-display" class="history-list">
+                <div class="history-entry text-muted">No spins yet...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="sound-spin" src="https://assets.mixkit.co/sfx/preview/mixkit-slot-machine-wheel-1932.mp3"></audio>
+    <audio id="sound-win" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+    <audio id="sound-lose" src="https://assets.mixkit.co/sfx/preview/mixkit-funny-fail-low-tone-2849.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
